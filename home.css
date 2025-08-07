@@ -3,7 +3,7 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: url('../images/nasa-1lfI7wkGWZ4-unsplash.jpg') no-repeat center/cover;
+  background: url('nasa-1lfI7wkGWZ4-unsplash.jpg') no-repeat center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,3 +69,4 @@
   margin-top: 10px;
   color: rgba(255,255,255,0.8);
 }
+
