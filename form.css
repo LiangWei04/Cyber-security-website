@@ -1,0 +1,76 @@
+/* ===== SURVEY SECTION ===== */
+.slide-section {
+  height: auto !important;
+  min-height: auto;
+  margin-top: 120px; /* offset for navbar */
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 60px;
+}
+
+/* ===== SURVEY FORM CONTAINER ===== */
+.article {
+  position: relative; /* Add this line */
+  z-index: 1;          /* Add this line */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== FORM ELEMENTS ===== */
+.form-label {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.form-select {
+  background-color: #1b2a3d;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.form-select:focus {
+  background-color: #243954;
+  border-color: #00f2fe;
+  color: white;
+  box-shadow: 0 0 5px #00f2fe;
+}
+
+/* ===== SURVEY RESULT ===== */
+#surveyResult {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#surveyResult.show {
+  opacity: 1;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  background-color: #00f2fe;
+  border: none;
+  color: #000;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: #00c2cb;
+}
+
+.sum-title {
+  display: block;
+  width: 100%;
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(0, 174, 255, 0.5);
+}

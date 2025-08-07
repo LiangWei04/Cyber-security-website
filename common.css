@@ -1,0 +1,157 @@
+/* ===== RESET & BASE ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body { background-color: #0d1b2a; }
+
+/* Scroll Progress Bar */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(to right, #00f2fe, #4facfe);
+  z-index: 9999;
+  transition: width 0.2s;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(0,0,0,0.6) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: #00f2fe;
+  transition: width 0.3s;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* Floaty & Bounce Animations */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Slide Sections (Shared) */
+.slide-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+  padding: 2rem;
+  position: relative;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  color: white;
+  transition: background 1s ease;
+}
+.slide-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: 0;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  width: 100%;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,174,255,0.6);
+  animation: floaty 4s ease-in-out infinite;
+}
+
+.slide-text {
+  flex: 1;
+  font-size: 1.5rem;
+  max-width: 600px;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s ease;
+}
+.slide-text.show { opacity: 1; transform: translateY(0); }
+.slide-text.hide { opacity: 0; transform: translateY(-100px); }
+
+.slide-image {
+  width: 40%;
+  max-width: 400px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+.slide-image:hover { animation: bounce 1s infinite; }
+.slide-section.show .slide-image { opacity: 1; transform: translateY(0) scale(1.05); }
+.slide-section.hide .slide-image { opacity: 0; transform: translateY(-100px); }
+
+@media (max-width: 768px) {
+  .slide-content { flex-direction: column; text-align: center; }
+  .slide-image { width: 80%; }
+}
+
+/* Shared Quiz Container */
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+}
+.quiz-card {
+  flex: 0 1 60%;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+.quiz-card.expanded { flex: 1 1 100% !important; }
+.quiz-inner {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.quiz-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.quiz-card.expanded .quiz-content {
+  opacity: 1;
+  max-height: 500px;
+}
+
+/* Tip Cards Shared Style */
+.tip-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tip-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}

@@ -1,0 +1,229 @@
+/* ===== Info Page Styles ===== */
+
+/* Page Header */
+.info-header {
+  background: url('../images/infoimage.png') no-repeat center/cover;
+  min-height: 100vh;                /* Full screen hero */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 350px;               /* Offset for fixed navbar */
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .info-header { padding-top: 80px; }
+}
+
+/* ===== Section Layout Fix ===== */
+.slide-section {
+  display: block !important;   /* Ensure sections flow vertically */
+  width: 100%;
+}
+
+.slide-section h2,
+.slide-section p {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* ===== Section Titles (Summary Style) ===== */
+.sum-title {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  opacity: 0;
+  animation: fadeDown 1s ease forwards;
+}
+
+.title {
+  color: var(--title, #fff); /* fallback white */
+}
+
+/* Fade-down animation for titles */
+@keyframes fadeDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Article Content Box ===== */
+.article {
+  background-color: rgba(255, 255, 255, 0.08); /* Semi-transparent for dark pages */
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 60px 50px 50px 50px;
+  font-size: 1.1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  color: white;
+  margin-bottom: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+}
+
+/* Paragraph inside articles */
+.article p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ===== Tip Cards ===== */
+.tip-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff; /* Keep cards white for visual contrast */
+}
+.tip-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* ===== Quiz Container ===== */
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+}
+
+.quiz-card {
+  flex: 0 1 60%;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+.quiz-card.expanded { flex: 1 1 100% !important; }
+
+.quiz-inner {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.quiz-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.quiz-card.expanded .quiz-content {
+  opacity: 1;
+  max-height: 500px;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .article {
+    padding: 40px 20px;
+  }
+  .sum-title {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+}
+
+/* ===== Cybersecurity Facts Grid ===== */
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.fact-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 150px;
+}
+
+.fact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Short description always visible */
+.fact-short {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* Detailed info hidden by default */
+.fact-detail {
+  font-size: 0.9rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  margin-top: 10px;
+  transition: all 0.4s ease;
+}
+
+/* Reveal detail on hover */
+.fact-card:hover .fact-detail {
+  opacity: 1;
+  max-height: 200px;
+}
+
+.quiz-question button {
+  margin: 0.5rem;
+  min-width: 100px;
+}
+
+.quiz-question button.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.quiz-question button.correct {
+  background-color: #28a745 !important; /* Green */
+  color: white;
+}
+
+.quiz-question button.wrong {
+  background-color: #dc3545 !important; /* Red */
+  color: white;
+}
+
+.quiz-next button {
+  font-size: 1.5rem;
+  border-radius: 15px;
+  padding: 0.5rem 1rem;
+}
+
+.quiz-question.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+}
+
+.quiz-question.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+
+.quiz-start h3 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.quiz-result h3 {
+  margin-bottom: 20px;
+}
+

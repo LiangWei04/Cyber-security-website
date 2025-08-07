@@ -1,0 +1,71 @@
+/* Hero Section */
+#hero {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: url('../images/nasa-1lfI7wkGWZ4-unsplash.jpg') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  color: white;
+  z-index: 10;
+  transform: translateY(0);
+  transition: transform 1s ease-in-out;
+}
+#hero.hidden { transform: translateY(-100%); }
+#hero.revealed { transform: translateY(0); display: flex; }
+
+/* Ensure slide-section ::before does not block mouse events */
+.slide-section::before {
+  pointer-events: none;
+}
+
+/* Make content above overlay clickable */
+.slide-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+#scrollHint {
+  margin-top: 20px;
+  font-size: 1rem;
+  animation: bounce 1.5s infinite;
+  opacity: 0.8;
+}
+
+/* First Slide Offset */
+#firstSlide { margin-top: 100vh; }
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 320px;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #00f2fe;
+}
+
+.stat-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.stat-detail {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: rgba(255,255,255,0.8);
+}

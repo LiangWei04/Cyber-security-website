@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Safety Survey</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/common.css" rel="stylesheet">
+  <link href="../css/form.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Cyber Safety</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="info.html">Tips</a></li>
+        <li class="nav-item"><a class="nav-link active" href="form.html">Survey</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<section class="slide-section">
+  <div class="article">
+    <h2 class="sum-title">Answer all questions honestly to assess your cyber safety!</h2>
+    <form id="cyberSurvey">
+      <!-- Question 1 -->
+      <div class="mb-4">
+          <label class="form-label">1. Do you use unique and strong passwords for all your accounts?</label>
+          <select class="form-select" name="passwords" required>
+            <option value="">Select</option>
+            <option value="2">Yes, always</option>
+            <option value="1">Sometimes</option>
+            <option value="0">No, I reuse passwords</option>
+          </select>
+      </div>
+            
+      <!-- Question 2 -->
+      <div class="mb-4">
+        <label class="form-label">2. Do you enable Two-Factor Authentication (2FA)?</label>
+        <select class="form-select" name="2fa" required>
+          <option value="">Select</option>
+          <option value="2">Yes, for all accounts</option>
+          <option value="1">Only for some accounts</option>
+          <option value="0">No, I don’t use 2FA</option>
+        </select>
+      </div>
+            
+      <!-- Question 3 -->
+      <div class="mb-4">
+        <label class="form-label">3. How do you handle suspicious links or emails?</label>
+        <select class="form-select" name="phishing" required>
+          <option value="">Select</option>
+          <option value="2">I ignore and report them</option>
+          <option value="1">I check carefully before clicking</option>
+          <option value="0">I sometimes click them</option>
+        </select>
+      </div>
+            
+      <!-- Question 4 -->
+      <div class="mb-4">
+        <label class="form-label">4. How often do you update your software and apps?</label>
+        <select class="form-select" name="updates" required>
+          <option value="">Select</option>
+          <option value="2">Immediately when updates are available</option>
+          <option value="1">Occasionally</option>
+          <option value="0">Rarely or never</option>
+        </select>
+      </div>
+            
+      <!-- Question 5 -->
+      <div class="mb-4">
+        <label class="form-label">5. Do you use antivirus or security software?</label>
+        <select class="form-select" name="antivirus" required>
+          <option value="">Select</option>
+          <option value="2">Yes, always active</option>
+          <option value="1">Sometimes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+            
+      <!-- Question 6 -->
+      <div class="mb-4">
+        <label class="form-label">6. Do you back up your important data?</label>
+        <select class="form-select" name="backup" required>
+          <option value="">Select</option>
+          <option value="2">Yes, regularly</option>
+          <option value="1">Occasionally</option>
+          <option value="0">Never</option>
+        </select>
+      </div>
+            
+      <!-- Question 7 -->
+      <div class="mb-4">
+        <label class="form-label">7. Do you verify URLs before entering personal information?</label>
+        <select class="form-select" name="urls" required>
+          <option value="">Select</option>
+          <option value="2">Always</option>
+          <option value="1">Sometimes</option>
+          <option value="0">Rarely</option>
+        </select>
+      </div>
+            
+      <!-- Question 8 -->
+      <div class="mb-4">
+        <label class="form-label">8. Do you use public Wi-Fi for sensitive activities (like banking)?</label>
+        <select class="form-select" name="wifi" required>
+          <option value="">Select</option>
+          <option value="2">Never</option>
+          <option value="1">Sometimes with VPN</option>
+          <option value="0">Often</option>
+        </select>
+      </div>
+            
+      <!-- Question 9 -->
+      <div class="mb-4">
+        <label class="form-label">9. Do you check app permissions before installing?</label>
+        <select class="form-select" name="permissions" required>
+          <option value="">Select</option>
+          <option value="2">Always</option>
+          <option value="1">Sometimes</option>
+          <option value="0">Rarely</option>
+          </select>
+      </div>
+            
+      <!-- Question 10 -->
+      <div class="mb-4">
+        <label class="form-label">10. Do you use different passwords for work and personal accounts?</label>
+        <select class="form-select" name="workpass" required>
+          <option value="">Select</option>
+          <option value="2">Yes</option>
+          <option value="1">Sometimes</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+      <!-- Textarea -->
+      <div class="mb-4">
+        <label for="userTip" class="form-label">💡 Share your favorite cyber safety tip:</label>
+        <textarea id="userTip" name="userTip" class="form-control" rows="3" maxlength="200" required></textarea>
+        <small class="form-text text-muted"><span id="charCount">0</span>/200 characters</small>
+      </div>
+      
+      <!-- Range -->
+      <div class="mb-4">
+        <label for="selfRating" class="form-label">🔐 How cyber safe do you think you are? (0 = not safe, 10 = very safe)</label>
+        <input type="range" class="form-range" min="0" max="10" id="selfRating" name="selfRating">
+        <output id="ratingValue" class="ms-2"></output>
+      </div>
+      
+      <!-- Checkbox -->
+      <div class="mb-4">
+        <label class="form-label">📚 What areas do you want to improve? (Select all that apply)</label><br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="areaPasswords" name="improveAreas" value="passwords">
+          <label class="form-check-label" for="areaPasswords">Passwords</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="areaPhishing" name="improveAreas" value="phishing">
+          <label class="form-check-label" for="areaPhishing">Phishing</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="areaPrivacy" name="improveAreas" value="privacy">
+          <label class="form-check-label" for="areaPrivacy">Privacy Settings</label>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary mt-3">Submit Survey</button>
+      </div>
+                
+    </form>
+    <div id="surveyResult" class="mt-5 text-white d-none">
+      <h4>Summary:</h4>
+      <p id="surveySummary" class="mb-3"></p>
+      <h5 id="surveyFeedback"></h5>
+    </div>
+  </div>
+</section>
+
+
+<script src="../js/common.js"></script>
+<script src="../js/form.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
