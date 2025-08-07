@@ -2,7 +2,7 @@
 
 /* Page Header */
 .info-header {
-  background: url('../images/infoimage.png') no-repeat center/cover;
+  background: url('infoimage.png') no-repeat center/cover;
   min-height: 100vh;                /* Full screen hero */
   display: flex;
   flex-direction: column;
@@ -226,4 +226,5 @@
 .quiz-result h3 {
   margin-bottom: 20px;
 }
+
 
